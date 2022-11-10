@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  lab: 
+    image: mcr.microsoft.com/planetary-computer/python:2022.10.6.0
+    command: jupyter lab --no-browser --ip "0.0.0.0"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ".:/home/jovyan"
+    env_file:
+      - .env
